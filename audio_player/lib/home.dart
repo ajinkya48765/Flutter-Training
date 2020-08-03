@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:audioplayer/audioplayer.dart';
 
 myApp(){
   
@@ -16,19 +17,43 @@ myApp(){
             margin: EdgeInsets.all(20),
             child: RaisedButton(
               onPressed: (){
-                print("hi")
+                print("hi");
               },
             child: Card(
               color : Colors.blueGrey,
-              child : Text("HELLLLLO"),
+              child : Image.asset("assets/risewhite.png"),
             ),
             )
           ),
-          Container(
-            child: IconButton(icon: playbutton, onPressed: null),
-          )
-        ],
-        
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Container(
+                child: Card(
+                  color: Colors.amberAccent,
+                  child: IconButton(
+                    icon: Icon(Icons.play_circle_outline , ),
+                    onPressed: (){
+                      print("Song Played"); 
+                      } 
+                      
+                    ),
+                ),
+              ),
+              Container(
+                child: Card(
+                  color: Colors.amberAccent,  
+                  child: IconButton(
+                    icon: Icon(Icons.pause_circle_outline ,),
+                    onPressed: (){
+                      print("Song Played"); 
+                    } 
+                  ),
+                ),
+              )
+            ],
+          ),
+        ], 
       ),
     )
   );
